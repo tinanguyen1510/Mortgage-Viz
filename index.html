@@ -58,7 +58,7 @@ table#t01 tr:nth-child(odd) {
   margin-right: auto;
   width: 50%;
 }
-#imIn { display: inline-block; }
+#dis { display: inline-block; }
 
 /*.rowi {
   display: flex;
@@ -75,6 +75,15 @@ table#t01 tr:nth-child(odd) {
     text-align: center;
     padding: 0;
 }*/
+
+.iconbox {
+    /*text-align: center;*/
+    /*width: 128px;*/
+    display: inline-block;
+}
+.iconbox p {
+    margin: 0;
+}
 
 </style>
 
@@ -157,7 +166,11 @@ The Origination data contains variables that indicate the characteristics of the
 <li>  Property characteristics: Metropolitan Statistical Areas (MSA) , Unit, Occupancy Status, Property State, Property Type, Postal Code </li>
  </ol>  
  
-<img align="middle" src='header.PNG' class="center" />
+<!-- <img align="middle" src='header.PNG' class="center" /> -->
+<figure>
+    <img src='header.PNG' class="center" >
+    <figcaption style="text-align: center; font-style: italic; font-style: xx-small">Fig.1 - Samples from the Origination data</figcaption>
+    </figure>
 <br>
 <p>The Performance data contains information on how the loans perform monthly. It contains variable such as Current Unpaid Principal Balance, Loan Status, Loan Age, Number of Years to Maturity, etc. For the purpose of this study, only variable Loan Status from Performance data was used.</p>
   <h5><b>2. Data Preprocessing </b></h5>
@@ -173,7 +186,11 @@ The Origination data contains variables that indicate the characteristics of the
     <strong>SATO (%) = Average Fixed Rate - Stated Interest Rate</strong>
 </ul>
   <p>The code below is a snipet of the data cleaning process.</p>
-  <img align="middle" src='code_snipet.PNG' class="center" />
+  <!-- <img align="middle" src='code_snipet.PNG' class="center" /> -->
+  <figure>
+    <img src='code_snipet.PNG' class="center" >
+    <figcaption style="text-align: center; font-style: italic; font-style: xx-small">Fig.2 - Data preprocessing code snipet</figcaption>
+    </figure>
   <br>
     </div>
 <!--     <div class="w3-third w3-container">
@@ -186,7 +203,7 @@ The Origination data contains variables that indicate the characteristics of the
     <div class="w3-twothird w3-container">
       <h3 class="w3-text-teal" style="margin-top: -1%" ><b>III. Exploratory Data Analysis</b></h3>
       <h5><b>1. Geographical Distribution</b> </h5>
-      <div class='tableauPlaceholder' id='viz1588630766058' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ED&#47;EDA_15881893307010&#47;Population&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='EDA_15881893307010&#47;Population' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ED&#47;EDA_15881893307010&#47;Population&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588630766058');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth-200)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      <div class='tableauPlaceholder' id='viz1588630766058' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ED&#47;EDA_15881893307010&#47;Population&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='EDA_15881893307010&#47;Population' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ED&#47;EDA_15881893307010&#47;Population&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588630766058');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth-300)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
   <br>
   <p>Tab Overview shows the total number of loans funded in each state. Click on any state in the first plot to see the corresponding total by year in the second plot.</p>
   <p>Tab Population (%) compares the number of loans in serious delinquency vs performing loans.</p>
@@ -194,7 +211,7 @@ The Origination data contains variables that indicate the characteristics of the
   <p>During the 2013-2018 period, Freddie Mac purchased the most properties in California, Texas, Florida, and Ohio. These states were also the ones with the highest delinquency rates. The total number of delinquency in these states made up about 50% of all delinquency in the US.</p>
  
     <h5><b>2. Borrowers and Loans' Characteristics</b> </h5>
-  <div class='tableauPlaceholder' id='viz1588633182512' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Mean&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Comparisons_15881859506950&#47;Mean' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Mean&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588633182512');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth-200)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+  <div class='tableauPlaceholder' id='viz1588633182512' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Mean&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Comparisons_15881859506950&#47;Mean' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Mean&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588633182512');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth-300)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
   <br>
   <p>The plots above calculate the average of each numberical characteristics and compare between performning loans and delinquent loans. Overall, average DTI, LTV, MI percentage, and interest rate of default loans are higher than performing loans. Average credit score and SATO rate of delinquent loans are higher than performing loans. The wide gap in SATO rate between these loan statuses indicates on average, both perfoming loans and delinquent loans received higher interest rates than market average. Additionally, loans that would later delinquent received a much higher interest rates at origination than loans that would later perform.</p>
     </div>
@@ -213,7 +230,12 @@ The Origination data contains variables that indicate the characteristics of the
     Classifiers such as Logistic Regression, Decision Tree, and XGBoost were applied.
     Models were evaluated using precision score.
     The code below fits different classifers and returns the scores for each model.</p>
-  <img align="middle" src='code_snipet2.PNG' class="center" />
+  <!-- <img align="middle" src='code_snipet2.PNG' class="center" /> -->
+  <figure>
+    <img src='code_snipet2.PNG' class="center" >
+    <figcaption style="text-align: center; font-style: italic; font-style: xx-small">Fig.3 - Modeling code snipet</figcaption>
+    </figure>
+
   <br>
 <!--   <div class="rowi">
   <div class="columni">
@@ -234,24 +256,30 @@ The Origination data contains variables that indicate the characteristics of the
     </figure>
   </div>
 </div> -->
+<p> <i>Figure 4</i> shows the class distributions of the original dataset and after resampling. The first plot shows the ditribution of the original dataset. Note that delinquency rate is only 0.77% of the entire population. 
+  The second plot shows the class distribution after undersampling the data by 50%. Samples from the majority class was removed so that the ratio of the two classes is 1:2.
+The third plot shows the data after applying both oversampling and undersampling. The minority class was increased by 20% from 20,000 in the original dataset to 40,000 in this dataset. Meanwhile, the majority class was decreased so that it is 30% more than the minority class.</p>
+<div style="width:100%; background-color:white; height:50%; overflow:auto;">
+    <div style="width: 100%; height: 100%" class="dis">
+     <figure>
+      <img src="full pop.png" width="33%" height="33%"/>
+    
+      <img src="under50.png" width="33%" height="33%"/>
+      <img src="combine pop.png" width="33%" height="33%" />
+      <figcaption style="text-align: center; font-style: italic; font-style: xx-small">Fig.4 - Class distribution with full population, undersampling, and combination</figcaption>
+    </figure>
+    </div>
+  </div>
 
 
-<!--     <div id="imIn">
-<img style="display: inline; margin: 0 5px;" title="heartica_logo" src="full pop.png" alt="" width="30%" height="30%" />
-<img style="display: inline; margin: 0 5px;" title="mouseflow_logo" src="under50.png" alt="" width="30%" height="30%" />
-<img style="display: inline; margin: 0 5px;" title="piiholo_logo" src="combine.png" alt="" width="30%" height="30%" />
-
-
-</div> -->
-  
   <h5><b>1. Base Model - Full Population</b></h5>
   
-  <figure>
+  <!-- <figure>
   <img align="middle" src='full pop.png' class="center50" >
   <figcaption style="text-align: center; font-style: italic; font-style: xx-small">Fig.4 - Full population</figcaption>
-  </figure>
+  </figure> -->
   
-  <p>The plot above shows the class distribution of all loans funded between 2013 and 2018. In the original population, the classes are very skewed. </p>
+  <p>The table below shows the scores after training on the entire population. Decision Tree overfitted in the training dataset. Precision score and F1 score of Logisic Regression is very high. This is because it failed to classify delinquency 100% of the time. If the evaluation criteria changes to identify loans that would later delinquent, this model would fail. Therefore, XGBoost on the full population is selected as the best model with the precision score of 0.829.</p>
   <table class='centert' style="overflow-x:auto" id="t01">
   <tr>
     <th>Model</th>
@@ -285,12 +313,12 @@ The Origination data contains variables that indicate the characteristics of the
   
   <h5><b>2. Undersampling 50% </b></h5>
   
-  <figure>
+ <!--  <figure>
   <img align="middle" src='under50.png' class="center50">
   <figcaption style="text-align: center; font-style: italic; font-style: xx-small">Fig.5 - Undersampling</figcaption>
-  </figure>
+  </figure> -->
 
-  <p>Undersampling is applied so that the majority class is 50% more than the miniory class. The above plot shows the class distribution after resampling.</p>
+  <p>The above plot shows the scores for training and testing sets after undersampling. Note that Decision Tree overfitted once again. XGBoost and Logistic Regression have the highest accuracy score. However, Logistic Regression has higher F1 score on the testing data. Overall, undersampling returned worse results than applying the classifiers on the entire population.</p>
   <table class="centert" style="overflow-x:auto" id="t01">
   <tr>
     <th>Model</th>
@@ -324,12 +352,12 @@ The Origination data contains variables that indicate the characteristics of the
   
   <h5><b>3. Combination</b></h5>
 
-  <figure>
+<!--   <figure>
   <img align="middle" src='combine pop.png' class="center50"  >
   <figcaption style="text-align: center; font-style: italic; font-style: xx-small">Fig.6 - Combination</figcaption>
-  </figure>
+  </figure> -->
 
-  <p>The above plot shows the class distribution after the data was oversampled by 20% and undersampled by 30%.</p>
+  <p>The table below shows the results after the data was oversampled by 20% and undersampled by 30%. On the testing set, XGBoost outperformed other models in both precision and F1 scores. The combination between oversampling and undersampling yeilded better results than just applying undersampling alone.</p>
   <table class='centert' style="overflow-x:auto" id="t01">
   <tr>
     <th>Model</th>
